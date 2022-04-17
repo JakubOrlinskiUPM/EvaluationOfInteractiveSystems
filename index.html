@@ -12,6 +12,10 @@
       gtag('js', new Date());
 
       gtag('config', 'G-CKY72WERGH');
+        
+      function registerClick() {
+        gtag('event', 'purchase');
+      }
     </script>
     
     <!-- anti-flicker snippet (recommended)  -->
@@ -31,7 +35,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
     <div>
         <button class="button">No</button>
-        <button class="button button-alt">Yes</button>
+        <button class="button button-alt" onclick="registerClick()">Yes</button>
     </div>
 </div>
 
