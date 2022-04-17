@@ -14,8 +14,23 @@
       gtag('config', 'G-CKY72WERGH');
         
       function registerClick() {
-        gtag('event', 'purchase');
-      }
+			gtag('event', 'purchase', {
+				"transaction_id": "" + Date.now(),
+				"affiliation": "Evaluation website",
+				"value": 100.00,
+				"currency": "EUR",
+				"tax": 1.24,
+				"shipping": 0,
+				"items": [
+					{
+						"id": "P12345",
+						"name": "Purple button",
+						"list_name": "Purple button",
+						"brand": "Evaluation",
+					},
+				]
+			});
+		}
     </script>
     
     <!-- anti-flicker snippet (recommended)  -->
