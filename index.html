@@ -14,6 +14,7 @@
       gtag('config', 'G-CKY72WERGH');
         
       function registerClick() {
+	      console.log("[registerClick] Purchased!");
 			gtag('event', 'purchase', {
 				"transaction_id": "" + Date.now(),
 				"affiliation": "Evaluation website",
