@@ -1,0 +1,85 @@
+* {
+    font-family: "Apple SD Gothic Neo", serif;
+    font: -apple-system-body;
+}
+
+:root {
+    --background: #dfdddd;
+
+    --offset-value: 0.2rem;
+    --offset-shadow: var(--offset-value);
+    --offset-shadow-opposite: calc(-1 * var(--offset-value));
+    --shadow-color-light: #fff;
+    --shadow-color-dark: #c2bfb9;
+    --shadow-blur: 0.3rem;
+}
+
+body {
+    margin: 0;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background);
+}
+
+.heading {
+    font-size: 3rem;
+}
+
+.button {
+    background: var(--background);
+    margin: 3rem;
+    border: none;
+    border-radius: 0.7rem;
+    font-size: 1.5rem;
+    width: 10rem;
+    height: 3.5rem;
+    box-shadow: var(--offset-shadow) var(--offset-shadow) var(--shadow-blur) var(--shadow-color-dark),
+                var(--offset-shadow-opposite) var(--offset-shadow-opposite) var(--shadow-blur) var(--shadow-color-light);
+}
+
+.button-alt {
+    --background: linear-gradient(135deg, #809bf3, #4f69d9);
+    --shadow-color-light: #bec9f5;
+    --shadow-color-dark: #3d4c9b;
+
+    --background: #ac8df6;
+    --shadow-color-light: #d4c9ff;
+    --shadow-color-dark: #74688d;
+}
+
+.button:hover, .button-alt:hover {
+    box-shadow: inset var(--offset-shadow) var(--offset-shadow) var(--shadow-blur) var(--shadow-color-dark),
+                inset var(--offset-shadow-opposite) var(--offset-shadow-opposite) var(--shadow-blur) var(--shadow-color-light);
+}
+
+.input-container {
+    /*padding: 0.2rem;*/
+    width: 10rem;
+    height: 1.8rem;
+    border-radius: 0.2rem;
+    box-shadow: inset var(--offset-shadow) var(--offset-shadow) var(--shadow-blur) var(--shadow-color-dark),
+                inset var(--offset-shadow-opposite) var(--offset-shadow-opposite) var(--shadow-blur) var(--shadow-color-light);
+}
+
+.input {
+    --shadow-blur: 0.8rem;
+    background: transparent;
+    border: none;
+    padding-left: 0.3rem;
+    border-radius: 0.2rem;
+    width: 95%;
+    height: 95%;
+}
+
+.input:focus {
+    border: none;
+    outline: none;
+}
+

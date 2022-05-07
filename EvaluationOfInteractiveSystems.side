@@ -1,0 +1,42 @@
+{
+  "id": "0569c0c4-8ade-4cc1-a10f-53472c4ed104",
+  "version": "2.0",
+  "name": "EvaluationOfInteractiveSystems",
+  "url": "https://jakuborlinskiupm.github.io/EvaluationOfInteractiveSystems/",
+  "tests": [{
+    "id": "2c100d4e-5ecb-411b-a2ee-661a1936a2da",
+    "name": "Main",
+    "commands": [{
+      "id": "e98a44df-94f6-4f9e-a737-209688f08ec7",
+      "comment": "Open page",
+      "command": "open",
+      "target": "/EvaluationOfInteractiveSystems/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "98c1d8d7-31b0-4839-b786-b05747cf161b",
+      "comment": "",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": "null"
+    }, {
+      "id": "98c1d8d8-31b0-4839-b786-b05747cf161b",
+      "comment": "",
+      "command": "executeScript",
+      "target": "let randInt = Math.floor(Math.random() * 100); let buttonAlt = document.querySelector(\".button-alt\"); if (buttonAlt.parentNode.children[0].classList.contains(\"button-alt\")) { \tif (randInt > 90) { \t\tbuttonAlt.click(); \t} } else { \tif (randInt > 70) { \t\tbuttonAlt.click(); \t} }",
+      "targets": [],
+      "value": "null"
+    }]
+  }],
+  "suites": [{
+    "id": "940211fd-2d4c-4bfc-8f09-8bcc0f57d2c3",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["2c100d4e-5ecb-411b-a2ee-661a1936a2da"]
+  }],
+  "urls": ["https://jakuborlinskiupm.github.io/EvaluationOfInteractiveSystems/"],
+  "plugins": []
+}
