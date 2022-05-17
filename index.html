@@ -11,8 +11,8 @@
     <h2 class="heading">Do you want to buy this?</h2>
 
     <div id="button-parent">
-        <button class="button" id="no">No</button>
-        <button class="button button-alt" id="yes" onclick="registerClick()">Yes</button>
+        <button class="button" id="no" onclick="registerClick(0)">No</button>
+        <button class="button button-alt" id="yes" onclick="registerClick(1)">Yes</button>
     </div>
 </div>
 
@@ -27,10 +27,10 @@
         }
     }
 
-	function registerClick() {
+	function registerClick(clickedYes) {
 		let data = {
 			variant: window.VARIANT,
-			clickedYes: true
+			clickedYes: clickedYes
         };
 
 		fetch('postData.php', {
