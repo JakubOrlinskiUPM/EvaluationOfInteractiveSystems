@@ -29,10 +29,11 @@
 
 	function registerClick() {
 		let data = {
+			variant: window.VARIANT,
 			clickedYes: true
         };
 
-		fetch('3.94.67.203/team2/web', {
+		fetch('3.94.67.203/team_02/postData.php', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
