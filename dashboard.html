@@ -17,6 +17,12 @@
         let resp = await fetch('dashboard.php', {method: 'GET',});
         let result = await resp.json();
         console.log(result);
+
+        presentData(result);
+    }
+
+    function presentData(data) {
+        // TODO implement the math + display
     }
 
     function main() {

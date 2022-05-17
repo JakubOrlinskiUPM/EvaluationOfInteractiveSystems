@@ -18,10 +18,9 @@ $query = "SELECT * FROM `ab_test`";
 if ($result = $conn->query($query)) {
 
     $newArr = array();
-    /* fetch associative array */
     while ($db_field = mysqli_fetch_assoc($result)) {
         $newArr[] = $db_field;
     }
-    echo json_encode($newArr); // get all products in json format.
+    echo json_encode($newArr); // get all rows in json format.
 }
 ?>
