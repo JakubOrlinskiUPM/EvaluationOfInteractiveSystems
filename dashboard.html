@@ -14,12 +14,13 @@
 <script>
 
     async function fetchData() {
-        let result = await fetch('dashboard.php', {method: 'GET',});
+        let resp = await fetch('dashboard.php', {method: 'GET',});
+        let result = await resp.json();
         console.log(result);
     }
 
     function main() {
-        setInterval(fetchData, 3000)
+        setInterval(fetchData, 5000)
     }
 
     window.onload = main;
