@@ -1,0 +1,35 @@
+{
+  "id": "377c3396-ee23-47dd-8d37-832a4827d7d2",
+  "version": "2.0",
+  "name": "AB Testing Team 02",
+  "url": "http://3.94.67.203/",
+  "tests": [{
+    "id": "3a3063a7-5975-429e-876c-213e9e64cf01",
+    "name": "Main test",
+    "commands": [{
+      "id": "c37d17cb-c860-41df-9eee-30a6580e9e2f",
+      "comment": "",
+      "command": "open",
+      "target": "team_02/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "994565cc-a2d9-4be5-88ef-f31938064db0",
+      "comment": "",
+      "command": "executeScript",
+      "target": "if (window.VARIANT === 1) {\\n\t\tif (Math.random() * 100 > 70) {\\n\t\t\tdocument.getElementById(\"yes\").click();\\n\t\t} else {\\n\t\t\tdocument.getElementById(\"no\").click();\\n\t\t}\\n\t} else {\\n\t\tif (Math.random() * 100 > 50) {\\n\t\t\tdocument.getElementById(\"yes\").click();\\n\t\t} else {\\n\t\t\tdocument.getElementById(\"no\").click();\\n\t\t}\\n    }",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "5db1e51a-f5c5-4758-b10a-16089ac8e922",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["3a3063a7-5975-429e-876c-213e9e64cf01"]
+  }],
+  "urls": [],
+  "plugins": []
+}
