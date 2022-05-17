@@ -13,9 +13,10 @@ print($clickedYes);
 $servername = "localhost";
 $username = "root";
 $password = "Bk&=kw/gH3rY";
+$database = "team_02";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password);
+$conn = new mysqli($servername, $username, $password, $database);
 
 // Check connection
 if ($conn->connect_error) {
