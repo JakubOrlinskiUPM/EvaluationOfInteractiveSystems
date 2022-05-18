@@ -14,7 +14,7 @@
 <script>
 
     async function fetchData() {
-        let resp = await fetch('dashboard.php', {method: 'GET',});
+        let resp = await fetch('http://3.94.67.203/team_02/dashboard.php', {method: 'GET',});
         let result = await resp.json();
         console.log(result);
 
