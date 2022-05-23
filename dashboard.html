@@ -9,7 +9,17 @@
 <div>
     The data screen
 </div>
-
+<div>
+    We performed the test on <p id="sample_size"></p> people/clicking times. 
+    The first variant, where the button 'yes' is purple, was used <p id="variant_1_length"></p> times. Here, the users clicked <p id="variant_1_length_yes"></p> on the button 'yes'. 
+    The second variant, where the button 'no' is purple, was used <p id="variant_2_length"></p> times. Here, the users clicked <p id="variant_2_length_yes"></p> on the button 'yes'. 
+</div>
+<div>
+    The proportion of the total users that clicked 'yes' is: <p id="proportion"></p>
+</div>
+<div>
+    The Z score is: <p id="z_score"></p>
+</div>
 
 <script>
 
@@ -23,7 +33,59 @@
 
     function presentData(data) {
         // TODO implement the math + display
+        // elements in array: {id: '1', variant: '0', clickedYes: '1'}
+        var iterator = data.values();
+        variant_1 = []
+        yes_1 = 0
+        variant_2 = []
+        yes_2 = 0
+        for (let elements of iterator) {
+            if (elements.variant == '0'){
+                variant_1 += Number(elements.clickedYes)
+                if (elements.clickedYes == '1'){
+                    yes_1 += 1
+                }
+            }
+            if (elements.variant == '1'){
+                variant_2 += Number(elements.clickedYes)
+                if (elements.clickedYes == '1'){
+                    yes_2 += 1
+                }
+            }
+        }
+        document.getElementById("variant_1_length_yes").innerHTML = yes_1;
+        document.getElementById("variant_2_length_yes").innerHTML = yes_2;
+        total_1 = variant_1.length
+        total_2 = variant_2.length
+        document.getElementById("variant_1_length").innerHTML = total_1;
+        document.getElementById("variant_2_length").innerHTML = total_2;
+        n = data.length
+        document.getElementById("sample_size").innerHTML = n;
+
+        console.log(n)
+        console.log('total')
+        console.log(total_1, total_2)
+
+        console.log('total clicked yes')
+        console.log(yes_1, yes_2)
+
+
+        console.log('variant 1: ')
+        console.log(variant_1)
+        console.log('end variant 1')
+        console.log('variant 2: ')
+        console.log(variant_2)
+        console.log('end variant 2')
         
+
+        p_hyp = 0.5
+
+        p = (yes_1 + yes_2)/n
+        document.getElementById("proportion").innerHTML = p;
+
+        z_score = ((yes_1/total_1)-(yes_2/total_2))/Math.sqrt(p*(1-p)*((1/total_1)+(1/total_2)))
+        
+        document.getElementById("z_score").innerHTML = z_score;
     }
 
     function main() {
