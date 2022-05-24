@@ -10,9 +10,9 @@
     The data screen
 </div>
 <div>
-    We performed the test on <p id="sample_size"></p> people/clicking times. 
-    The first variant, where the button 'yes' is purple, was used <p id="variant_1_length"></p> times. Here, the users clicked <p id="variant_1_length_yes"></p> on the button 'yes'. 
-    The second variant, where the button 'no' is purple, was used <p id="variant_2_length"></p> times. Here, the users clicked <p id="variant_2_length_yes"></p> on the button 'yes'. 
+    We performed the test on <p id="sample_size"></p> people/clicking times.
+    The first variant, where the button 'yes' is purple, was used <p id="variant_1_length"></p> times. Here, the users clicked <p id="variant_1_length_yes"></p> on the button 'yes'.
+    The second variant, where the button 'no' is purple, was used <p id="variant_2_length"></p> times. Here, the users clicked <p id="variant_2_length_yes"></p> on the button 'yes'.
 </div>
 <div>
     The proportion of the total users that clicked 'yes' is: <p id="proportion"></p>
@@ -76,7 +76,7 @@
         console.log('variant 2: ')
         console.log(variant_2)
         console.log('end variant 2')
-        
+
 
         p_hyp = 0.5
 
@@ -84,11 +84,12 @@
         document.getElementById("proportion").innerHTML = p;
 
         z_score = ((yes_1/total_1)-(yes_2/total_2))/Math.sqrt(p*(1-p)*((1/total_1)+(1/total_2)))
-        
+
         document.getElementById("z_score").innerHTML = z_score;
     }
 
     function main() {
+	    fetchData();
         setInterval(fetchData, 5000)
     }
 
